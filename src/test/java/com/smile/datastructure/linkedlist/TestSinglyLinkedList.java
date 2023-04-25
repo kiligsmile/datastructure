@@ -47,4 +47,15 @@ public class TestSinglyLinkedList {
         List<Integer> intList = Arrays.asList(1,2,3,4);
         Assertions.assertIterableEquals(intList,list);
     }
+
+    @Test
+    public void test4(){
+        SinglyLinkedList list = new SinglyLinkedList();
+        list.addLast(1);
+        list.addLast(2);
+        list.addLast(3);
+        list.addLast(4);
+        int i= list.get(10);
+        System.out.println(i);
+    }
 }

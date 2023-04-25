@@ -76,4 +76,34 @@ public class SinglyLinkedList implements Iterable<Integer> {
         last.next=new Node(value,null);
     }
 
+//    public void test(){
+//        int i=0;
+////        for循环的第一个条件，只能添加一个条件。或者定义多个变量，同一类型
+//        for(Node p=head;p!=null;p=p.next,i++){
+//            System.out.println(p.value+ " 索引是："+i);
+//        }
+//    }
+
+//    根据给定的索引位置，返回节点对象，不暴露给外界
+    private Node findNode(int index){
+        int i=0;
+        for(Node p=head;p!=null;p=p.next,i++){
+            if(i==index){
+                return p;
+            }
+        }
+        return null;    // 没有找到
+    }
+
+//    返回节点值
+    public int get(int index){
+        Node node = findNode(index);
+        if(node==null){
+//            抛非法参数异常
+            throw new IllegalArgumentException(
+                    String.format("index[%d] 不合法%n",index));
+        }
+        return node.value;
+    }
+
 }
