@@ -100,10 +100,52 @@ public class SinglyLinkedList implements Iterable<Integer> {
         Node node = findNode(index);
         if(node==null){
 //            抛非法参数异常
-            throw new IllegalArgumentException(
-                    String.format("index[%d] 不合法%n",index));
+            throw illegalIndex(index);
         }
         return node.value;
     }
 
+    private IllegalArgumentException illegalIndex(int index) {
+        return new IllegalArgumentException(
+                String.format("index[%d] 不合法%n", index));
+    }
+
+    //    给链表的任意一个索引位置加入一个元素
+    public void insert(int index,int value){
+        if(index==0){
+//            向链表头部插入节点
+            head=new Node(value,head);
+            return;
+        }
+        Node prev=findNode(index-1);  // 找到上一个节点
+        if(prev==null){
+            // 索引位置非法
+            throw illegalIndex(index);
+        }
+        prev.next= new Node(value,prev.next);
+    }
+
+//    删除第一个节点
+    public void removeFirst(){
+        if(head==null){  // 空链表
+            throw illegalIndex(0);
+        }
+        head=head.next;
+    }
+
+//    按索引删除节点
+    public void remove(int index){
+        if(index==0){
+            removeFirst();
+            return;
+        }
+        Node prev=findNode(index-1);
+//        prev.next=prev.next.next;
+        if(prev==null){
+            throw illegalIndex(index);
+        }
+        Node removed=prev.next;
+        if(removed==null)
+        prev.next=removed.next;
+    }
 }
