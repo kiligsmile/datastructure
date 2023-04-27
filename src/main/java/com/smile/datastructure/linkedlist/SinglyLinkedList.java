@@ -56,6 +56,19 @@ public class SinglyLinkedList implements Iterable<Integer> {
         }
     }
 
+    public void loop3(Consumer<Integer> before, Consumer<Integer> after){
+        recursion(head,before,after);
+    }
+
+    public void recursion(Node curr, Consumer<Integer> before, Consumer<Integer> after){   // 某个节点要进行的操作
+        if(curr==null){
+            return;
+        }
+        before.accept(curr.value);
+        recursion(curr.next, before, after);
+        after.accept(curr.value);
+    }
+
     private Node findLast(){
         if(head==null){  // 空链表
             return null;
