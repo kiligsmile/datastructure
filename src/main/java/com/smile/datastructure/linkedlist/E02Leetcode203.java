@@ -14,17 +14,15 @@ public class E02Leetcode203 {
     public ListNode removeElements1(ListNode head, int val) {
         ListNode s = new ListNode(-1, head);
         ListNode p1 = s;
-        ListNode p2 = s.next;
-        while (p2 != null) {
+        ListNode p2;
+        while ((p2 = p1.next) != null) {
             if (p2.val == val) {
                 // 删除, p2 向后平移
                 p1.next = p2.next;
-
             } else {
                 // p1 p2 向后平移
                 p1 = p1.next;
             }
-            p2=p2.next;
         }
         return s.next;
     }
@@ -49,7 +47,7 @@ public class E02Leetcode203 {
     }
 
     public static void main(String[] args) {
-        ListNode head = ListNode.of(1, 2, 6, 3, 6);
+        ListNode head = (ListNode) List.of(1, 2, 6, 3, 6);
 //        ListNode head = ListNode.of(7, 7, 7, 7);
         System.out.println(head);
         System.out.println(new E02Leetcode203()
