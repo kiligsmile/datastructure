@@ -7,7 +7,6 @@ public class LinkedListQueue<E> implements Queue<E>,Iterable<E>{
         E value;
         Node<E> next;
 
-
         public Node(E value, Node<E> next) {
             this.value = value;
             this.next = next;
