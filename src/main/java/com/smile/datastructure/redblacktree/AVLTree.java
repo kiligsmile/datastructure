@@ -1,4 +1,4 @@
-package com.smile.algorithm.redblacktree;
+package com.smile.datastructure.redblacktree;
 
 import java.util.Stack;
 

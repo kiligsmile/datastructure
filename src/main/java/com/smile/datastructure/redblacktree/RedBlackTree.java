@@ -1,4 +1,4 @@
-package com.smile.algorithm.redblacktree;
+package com.smile.datastructure.redblacktree;
 
 import static com.itheima.datastructure.redblacktree.RedBlackTree.Color.BLACK;
 import static com.itheima.datastructure.redblacktree.RedBlackTree.Color.RED;
