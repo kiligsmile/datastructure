@@ -1,7 +1,7 @@
 package com.smile.datastructure.redblacktree;
 
-import static com.itheima.datastructure.redblacktree.RedBlackTree.Color.BLACK;
-import static com.itheima.datastructure.redblacktree.RedBlackTree.Color.RED;
+import static com.smile.datastructure.redblacktree.RedBlackTree.Color.BLACK;
+import static com.smile.datastructure.redblacktree.RedBlackTree.Color.RED;
 
 /**
  * <h3>红黑树</h3>
