@@ -1,6 +1,7 @@
 package com.smile.datastructure.linkedlist;
 
-public class E01Leetcode206 {
+public class
+E01Leetcode206 {
 
     public ListNode reverseList1(ListNode o1){
         ListNode n1=null;

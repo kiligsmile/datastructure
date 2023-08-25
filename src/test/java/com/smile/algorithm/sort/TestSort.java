@@ -51,5 +51,12 @@ public class TestSort {
         assertArrayEquals(expected, a);
     }
 
+    @Test
+    @DisplayName("测试快速排序")
+    public void test6() {
+        int[] expected = {1, 2, 3, 4, 5};
+        quickSort(a,0,a.length-1);
+        assertArrayEquals(expected, a);
+    }
 
 }

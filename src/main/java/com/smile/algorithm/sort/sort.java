@@ -75,4 +75,31 @@ public class sort {
             }
         }
     }
+
+    public static void quickSort(int[] num,int start,int end){
+        if(start<end){
+            int pivotIndex=getPivotIndex(num,start,end);
+            quickSort(num,start,pivotIndex-1);
+            quickSort(num,pivotIndex+1,end);
+        }
+    }
+
+    public static int getPivotIndex(int[] num,int start,int end){
+        int pivot=num[start];
+        int low=start;
+        int high=end;
+        while(low<high){
+            while(low<=high&&num[low]<=pivot){
+                low++;
+            }
+            while (low<=high&&num[high]>pivot){
+                high--;
+            }
+            if(low<high){
+                swap(num,low,high);
+            }
+        }
+        swap(num,start,high);
+        return high;
+    }
 }
