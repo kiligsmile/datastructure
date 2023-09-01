@@ -20,6 +20,31 @@ public class sort {
         }
     }
 
+    public static void binaryInsertionSort(int[] nums) {
+        for (int i = 1; i < nums.length; i++) {
+            int insertNum = nums[i];
+            int insertIndex = -1;
+            int start = 0;
+            int end = i - 1;
+            while (start <= end) {
+                int mid = start + (end - start) / 2;
+                if (insertNum > nums[mid])
+                    start = mid + 1;
+                else if (insertNum < nums[mid])
+                    end = mid - 1;
+                else {
+                    insertIndex = mid + 1;
+                    break;
+                }
+            }
+            if (insertIndex == -1)
+                insertIndex = start;
+            if (i - insertIndex >= 0)
+                System.arraycopy(nums, insertIndex, nums, insertIndex + 1, i - insertIndex);
+            nums[insertIndex] = insertNum;
+        }
+    }
+
     // 希尔排序
     public static void shellSort(int[] nums) {
         for (int d = nums.length / 2; d > 0 ; d /= 2) {
@@ -102,4 +127,27 @@ public class sort {
         swap(num,start,high);
         return high;
     }
+//    public static void quickSort(int[] nums, int start, int end) {
+//        if (start < end) {
+//            int pivotIndex = getPivotIndex(nums, start, end);
+//            quickSort(nums, start, pivotIndex - 1);
+//            quickSort(nums, pivotIndex + 1, end);
+//        }
+//    }
+//
+//    public static int getPivotIndex(int[] nums, int start, int end) {
+//        int pivot = nums[start];
+//        int low = start;
+//        int high = end;
+//        while (low < high) {
+//            while (low <= high && nums[low] <= pivot)
+//                low++;
+//            while (low <= high && nums[high] > pivot)
+//                high--;
+//            if (low < high)
+//                swap(nums, low, high);
+//        }
+//        swap(nums, start, high);
+//        return high;
+//    }
 }

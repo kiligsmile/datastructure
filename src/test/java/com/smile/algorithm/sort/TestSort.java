@@ -20,6 +20,14 @@ public class TestSort {
     }
 
     @Test
+    @DisplayName("测试二分插入排序")
+    public void test7() {
+        int[] expected = {1, 2, 3, 4, 5};
+        binaryInsertionSort(a);
+        assertArrayEquals(expected, a);
+    }
+
+    @Test
     @DisplayName("测试希尔排序")
     public void test2() {
         int[] expected = {1, 2, 3, 4, 5};
